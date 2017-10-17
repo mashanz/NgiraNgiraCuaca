@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.rnest.ngirangiracuaca.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <EditText
+            android:id="@+id/text_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:ems="10"
+            android:hint="City Name"
+            android:inputType="textPersonName"
+            android:text="Bandung" />
+
+        <EditText
+            android:id="@+id/text_temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/radioGroup"
+            android:ems="10"
+            android:hint="Temperature"
+            android:inputType="textPersonName"
+            android:text="30" />
+
+        <EditText
+            android:id="@+id/text_weather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/text_temperature"
+            android:ems="10"
+            android:hint="Weather main"
+            android:inputType="textPersonName"
+            android:text="Mendung" />
+
+        <EditText
+            android:id="@+id/text_weather_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/text_weather"
+            android:layout_alignBottom="@+id/text_weather"
+            android:layout_toEndOf="@+id/text_temperature"
+            android:layout_toRightOf="@+id/text_temperature"
+            android:ems="10"
+            android:hint="Weather Icon"
+            android:inputType="textPersonName"
+            android:text="00" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/text_weather"
+            android:onClick="kalkulasi"
+            android:text="CALCULATE" />
+
+        <TextView
+            android:id="@+id/temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/button"
+            android:text="Temperature " />
+
+        <TextView
+            android:id="@+id/weather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/temperature"
+            android:text="Weather" />
+
+        <ImageView
+            android:id="@+id/imageIcon"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_below="@+id/resultWeather"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/resultTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/temperature"
+            android:layout_alignBottom="@+id/temperature"
+            android:layout_toEndOf="@+id/temperature"
+            android:layout_toRightOf="@+id/temperature"
+            android:text="..." />
+
+        <TextView
+            android:id="@+id/resultWeather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/resultTemp"
+            android:layout_toEndOf="@+id/temperature"
+            android:layout_toRightOf="@+id/temperature"
+            android:text="..." />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_city"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioKelvin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:checked="true"
+                android:text="Kelvin" />
+
+            <RadioButton
+                android:id="@+id/radioCelcius"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/radioKelvin"
+                android:layout_alignBottom="@+id/radioKelvin"
+                android:layout_toEndOf="@+id/radioKelvin"
+                android:layout_toRightOf="@+id/radioKelvin"
+                android:text="Celcius" />
+
+            <RadioButton
+                android:id="@+id/radioFahrenheit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/radioCelcius"
+                android:layout_alignBottom="@+id/radioCelcius"
+                android:layout_toEndOf="@+id/radioCelcius"
+                android:layout_toRightOf="@+id/radioCelcius"
+                android:text="Fahrenheit" />
+
+        </RadioGroup>
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>
